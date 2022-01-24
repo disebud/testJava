@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class FindTest {
 
-    public void findFloor(int jlhFloor , int noLoker) {
+    public void findFloor(int noLoker) {
 
         int start = 0 , finish = 0, plus =  0;
 
-//        int inputan = 10;
-
+        Boolean statusInfinity = false;
 
         boolean plusFive = true, plusSix = true, plusSeven = true ;
 
@@ -17,7 +16,7 @@ public class FindTest {
 
         ArrayList<String> deretRange = new ArrayList<String>();
 
-        for (int floor = 1 ; floor <= jlhFloor ; floor++ ){
+        for (int floor = 1 ; floor >= 1 ; floor++ ){
 //                System.out.println("Floor = " + floor);
             if(plusFive){
                 plus = 5;
@@ -47,21 +46,28 @@ public class FindTest {
                 plusSix = true;
             }
 
+            for (int i = 0; i < deretRange.size(); i++){
+                String[] valueRange = deretRange.get(i).split("-");
+                int rangeAwal = Integer.valueOf(valueRange[0]);
+                int rangeAkhir = Integer.valueOf(valueRange[1]);
 
+                for( int idx = rangeAwal ; idx <= rangeAkhir; idx++ ){
+                    if(noLoker == idx){
+                        statusInfinity = true;
+                        System.out.println("==========================================");
+                        System.out.println("Number Loker " + noLoker + " On Floor : " + (i + 1) );
+                        System.out.println("==========================================");
 
-        }
+                        for (int id = 0; id < deretRange.size(); id++) {
+                             System.out.println("Floor - " + (id+1) + " : range No " + deretRange.get(id));
+                        }
 
-        for (int i = 0; i < deretRange.size(); i++){
-//            System.out.println("Floor - " + (i+1) + " : " + deretRange.get(i));
-            String[] valueRange = deretRange.get(i).split("-");
-            int rangeAwal = Integer.valueOf(valueRange[0]);
-            int rangeAkhir = Integer.valueOf(valueRange[1]);
-
-            for( int idx = rangeAwal ; idx <= rangeAkhir; idx++ ){
-                if(noLoker == idx){
-                    System.out.println("==========================================");
-                    System.out.println("No Loker " + noLoker + " On Floor : " + (i + 1) + " = Range No Loker : " + deretRange.get(i));
+                    }
                 }
+            }
+
+            if (statusInfinity == true){
+                break;
             }
 
         }

@@ -14,13 +14,10 @@ public class MainTest {
 
         // Tampilkan output ke user
         System.out.println("### Mencari Letak Nomor Loker di Nomor Lantai Berapa.");
-        System.out.print("Masukkan Jumlah Lantai : ");
-        jlhLantai = inputan.nextInt();
         System.out.print("Masukkan No Loker yang dicari : ");
         noLoker = inputan.nextInt();
 
-        findTest.findFloor(jlhLantai,noLoker);
-
+        findTest.findFloor(noLoker);
 
     }
 
