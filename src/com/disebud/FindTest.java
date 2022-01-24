@@ -7,22 +7,15 @@ public class FindTest {
     public void findFloor(int noLoker) {
 
         int start = 0 , finish = 0, plus =  0;
-
         Boolean statusInfinity = false;
-
         boolean plusFive = true, plusSix = true, plusSeven = true ;
-
-//            Map<Integer,String> map=new HashMap<Integer,String>();
-
         ArrayList<String> deretRange = new ArrayList<String>();
 
         for (int floor = 1 ; floor >= 1 ; floor++ ){
-//                System.out.println("Floor = " + floor);
             if(plusFive){
                 plus = 5;
                 start = finish + 1;
                 finish = finish + plus;
-//                    map.put(floor,start+"-"+finish);
                 deretRange.add(start+"-"+finish);
                 plusFive = false;
                 plusSix = true;
@@ -31,7 +24,6 @@ public class FindTest {
                 plus = 6;
                 start = finish + 1;
                 finish = finish + plus;
-//                    map.put(floor,start+"-"+finish);
                 deretRange.add(start+"-"+finish);
                 plusSix = false;
                 plusSeven = true;
@@ -39,7 +31,6 @@ public class FindTest {
                 plus = 7;
                 start = finish + 1;
                 finish = finish + plus;
-//                    map.put(floor,start+"-"+finish);
                 deretRange.add(start+"-"+finish);
                 plusSeven = false;
                 plusFive = true;
